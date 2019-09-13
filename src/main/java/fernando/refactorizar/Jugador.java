@@ -4,11 +4,15 @@ import java.util.Arrays;
 
 class Jugador {
 
+
+    String[] resultados = { "PIEDRA", "PAPEL", "TIJERA" };
+    int partidasGanadas;
+
 	@Override
 	public int hashCode() {
 		final int prime = 31;
 		int result = 1;
-		result = prime * result + g;
+		result = prime * result + partidasGanadas;
 		result = prime * result + Arrays.hashCode(resultados);
 		return result;
 	}
@@ -22,14 +26,14 @@ class Jugador {
 				if (getClass() != obj.getClass())
 					return false;
 				Jugador other = (Jugador) obj;
-				if (g != other.g)
+				if (partidasGanadas != other.partidasGanadas)
 					return false;
 		return Arrays.equals(resultados, other.resultados);
 	}
 
 	@Override
 	public String toString() {
-		return "Jugador [resultados=" + Arrays.toString(resultados) + ", g=" + g + "]";
+		return "Jugador [resultados=" + Arrays.toString(resultados) + ", ganados=" + partidasGanadas + "]";
 	}
 
 	public String[] getResultados() {
@@ -40,16 +44,9 @@ class Jugador {
 		this.resultados = resultados;
 	}
 
-	public int getG() {
-		return g;
+	public int getPartidasGanadas() {
+		return partidasGanadas;
 	}
-
-				public void setG(int g) {
-		this.g = g;
-	}
-
-	String[] resultados = { "PIEDRA", "PAPEL", "TIJERA" };
-    int g;
 
     public String getResultado() {
         String resultado = "";
@@ -72,7 +69,7 @@ class Jugador {
     }
 
     public int getGanados() {
-        return g;
+        return partidasGanadas;
     }
 
 }

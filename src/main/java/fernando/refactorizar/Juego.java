@@ -35,6 +35,7 @@ public abstract class Juego {
                 System.out.print("La opci�n no es v�lida. Recuerda, elige 0: PIEDRA, 1: PAPEL, 2: TIJERA: ");
                 valor = Consola.readInt();
             }
+
             selJ1 = j1.resultados[valor];
             selJ2 = j2.getResultado();
 
@@ -42,22 +43,22 @@ public abstract class Juego {
             System.out.println("Jugador 2: " + selJ2);
 
             if (selJ1.equals("PIEDRA") && selJ2.equals("PAPEL")) {
-                j2.g++;
+                j2.partidasGanadas++;
                 System.out.println(getPerdiste());
             } else if (selJ1.equals("PIEDRA") && selJ2.equals("TIJERA")) {
-                j1.g++;
+                j1.partidasGanadas++;
                 System.out.println(getGanaste());
             } else if (selJ1.equals("PAPEL") && selJ2.equals("PIEDRA")) {
-                j1.g++;
+                j1.partidasGanadas++;
                 System.out.println(getGanaste());
             } else if (selJ1.equals("PAPEL") && selJ2.equals("TIJERA")) {
-                j2.g++;
+                j2.partidasGanadas++;
                 System.out.println(getPerdiste());
             } else if (selJ1.equals("TIJERA") && selJ2.equals("PIEDRA")) {
-                j2.g++;
+                j2.partidasGanadas++;
                 System.out.println(getPerdiste());
             } else if (selJ1.equals("TIJERA") && selJ2.equals("PAPEL")) {
-                j1.g++;
+                j1.partidasGanadas++;
                 System.out.println(getGanaste());
             } else {
                 System.out.println(getEmpate());

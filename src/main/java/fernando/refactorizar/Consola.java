@@ -31,6 +31,6 @@ class Consola extends Jugador {
 
     @Override
     public int getGanados() {
-        return g + 10;
+        return partidasGanadas + 10;
     }
 }
