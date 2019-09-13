@@ -29,7 +29,7 @@ public abstract class Juego {
         String selJ1, selJ2;
 
         do {
-            System.out.println("Elige 0: PIEDRA, 1: PAPEL, 2: TIJERA: ");
+            System.out.print("Elige 0: PIEDRA, 1: PAPEL, 2: TIJERA: ");
             valor = Consola.readInt();
             while (!(valor >= 0 && valor < 3)) {
                 System.out.print("La opci�n no es v�lida. Recuerda, elige 0: PIEDRA, 1: PAPEL, 2: TIJERA: ");
@@ -43,24 +43,24 @@ public abstract class Juego {
 
             if (selJ1.equals("PIEDRA") && selJ2.equals("PAPEL")) {
                 j2.g++;
-                System.out.println("Perdiste");
+                System.out.println(getPerdiste());
             } else if (selJ1.equals("PIEDRA") && selJ2.equals("TIJERA")) {
                 j1.g++;
-                System.out.println("Ganaste");
+                System.out.println(getGanaste());
             } else if (selJ1.equals("PAPEL") && selJ2.equals("PIEDRA")) {
                 j1.g++;
-                System.out.println("Ganaste");
+                System.out.println(getGanaste());
             } else if (selJ1.equals("PAPEL") && selJ2.equals("TIJERA")) {
                 j2.g++;
-                System.out.println("Perdiste");
+                System.out.println(getPerdiste());
             } else if (selJ1.equals("TIJERA") && selJ2.equals("PIEDRA")) {
                 j2.g++;
-                System.out.println("Perdiste");
+                System.out.println(getPerdiste());
             } else if (selJ1.equals("TIJERA") && selJ2.equals("PAPEL")) {
                 j1.g++;
-                System.out.println("Ganaste");
+                System.out.println(getGanaste());
             } else {
-                System.out.println("Empate");
+                System.out.println(getEmpate());
             }
             System.out.println();
             System.out.println("Ganados Jugador 1: " + j1.getGanados());

@@ -33,39 +33,4 @@ class Consola extends Jugador {
     public int getGanados() {
         return g + 10;
     }
-
-    public String getResultado() {
-        String resultado = "";
-        int i = (int) (Math.random() * 3);
-        switch (i) {
-            case 0:
-                resultado = "PIEDRA";
-                break;
-            case 1:
-                resultado = "PAPEL";
-                break;
-            case 2:
-                resultado = "TIJERA";
-                break;
-        }
-        return resultado;
-    }
-
-    public String getResultado(String piedra, String papel, String tijera) {
-        String resultado = "";
-        int i = (int) (Math.random() * 3);
-        switch (i) {
-            case 0:
-                resultado = "PIEDRA";
-                break;
-            case 1:
-                resultado = "PAPEL";
-                break;
-            case 2:
-                resultado = "TIJERA";
-                break;
-        }
-        return resultado;
-    }
-
 }
