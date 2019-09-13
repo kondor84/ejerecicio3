@@ -12,29 +12,18 @@ class Consola extends Jugador {
         Consola.data = new BufferedReader(new InputStreamReader(System.in));
     }
 
-   /* private Consola() {
-    	Consola.data = new BufferedReader(new InputStreamReader(System.in));
-    }*/
-
-    public static String readLine() throws IOException {
-		return Consola.data.readLine();
+    private static String readLine() throws IOException {
+        return Consola.data.readLine();
     }
 
-    /*public static String readLine() throws IOException {
-		return Consola.data.readLine();
-    }*/
-
-    public static int readInt() {
-        while(true == true) {
+    static int readInt() {
+        while (true) {
             try {
                 return Integer.parseInt(Consola.readLine().trim());
-            }
-			            catch(NumberFormatException ex) {
-			                System.out.println("El valor ingresado no es \"INTEGER\", vuelva a intentar");
-			            }
-			            catch(IOException ex) {
-			            }
-            catch(Exception e) {
+            } catch (NumberFormatException ex) {
+                System.out.println("El valor ingresado no es \"INTEGER\", vuelva a intentar");
+            } catch (IOException ignored) {
+            } catch (Exception ignored) {
 
             }
         }
@@ -45,38 +34,35 @@ class Consola extends Jugador {
         return g + 10;
     }
 
-public String getResultado() {
-    String resultado = "";
-int i = (int)(Math.random() * 3);
-switch(i) {
-    case 0:
-            	resultado = "PIEDRA";
-			                break;
-			            case 1:
-			            	resultado = "PAPEL";
-			                break;
-			            case 2:
-			            	resultado = "TIJERA";
-			                break;
-			        }
-			        return resultado;
-			    }
-
-public String getResultado(String piedra, String papel, String tijera) {
-    String resultado = "";
-int i = (int)(Math.random() * 3);
-switch(i) {
-    case 0:
-    	resultado = "PIEDRA";
-        break;
-            case 1:
-            	resultado = "PAPEL";
+    public String getResultado() {
+        String resultado = "";
+        int i = (int) (Math.random() * 3);
+        switch (i) {
+            case 0:
+                resultado = "PIEDRA";
                 break;
-                /*  case 1:
-            	resultado = "PAPEL";
-                break;*/
+            case 1:
+                resultado = "PAPEL";
+                break;
             case 2:
-            	resultado = "TIJERA";
+                resultado = "TIJERA";
+                break;
+        }
+        return resultado;
+    }
+
+    public String getResultado(String piedra, String papel, String tijera) {
+        String resultado = "";
+        int i = (int) (Math.random() * 3);
+        switch (i) {
+            case 0:
+                resultado = "PIEDRA";
+                break;
+            case 1:
+                resultado = "PAPEL";
+                break;
+            case 2:
+                resultado = "TIJERA";
                 break;
         }
         return resultado;

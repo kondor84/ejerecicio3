@@ -24,9 +24,7 @@ class Jugador {
 				Jugador other = (Jugador) obj;
 				if (g != other.g)
 					return false;
-				if (!Arrays.equals(resultados, other.resultados))
-					return false;
-				return true;
+		return Arrays.equals(resultados, other.resultados);
 	}
 
 	@Override
@@ -50,7 +48,7 @@ class Jugador {
 		this.g = g;
 	}
 
-	String resultados[] = { "PIEDRA", "PAPEL", "TIJERA" };
+	String[] resultados = { "PIEDRA", "PAPEL", "TIJERA" };
     int g;
 
     public String getResultado() {
@@ -61,8 +59,6 @@ class Jugador {
             	resultado = "PIEDRA";
             	System.out.println();
                 break;
-                //resultado = "TIJERA";
-                //break;1
             case 1:
             	resultado = "PAPEL";
             	System.out.println();
